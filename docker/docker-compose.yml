@@ -1,0 +1,32 @@
+version: '3'
+services:
+  elastic:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.13.1
+    environment:
+        - discovery.type=single-node
+        - bootstrap.memory_lock=true
+        - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - D:/Docker/ElasticSearchMovies/elastic/data:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    networks:
+      - elasticsearchmovies
+
+  database:
+    image: "mcr.microsoft.com/mssql/server:2019-latest"
+    environment:
+      SA_PASSWORD: "B@A4z&j47ZGY$q"
+      ACCEPT_EULA: "Y"
+    ports:
+      - 1433:1433
+    networks:
+      - elasticsearchmovies
+
+networks:
+    elasticsearchmovies:
+        driver: bridge
