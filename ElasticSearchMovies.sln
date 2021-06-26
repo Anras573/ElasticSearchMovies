@@ -18,13 +18,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{8C1B5E
 		docker\docker-compose.yml = docker\docker-compose.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElasticSearchMovies.Domain", "src\ElasticSearchMovies.Domain\ElasticSearchMovies.Domain.csproj", "{7E7B468B-A307-4BC7-8E1B-586C9E890D63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElasticSearchMovies.Domain", "src\ElasticSearchMovies.Domain\ElasticSearchMovies.Domain.csproj", "{7E7B468B-A307-4BC7-8E1B-586C9E890D63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElasticSearchMovies.Application", "src\ElasticSearchMovies.Application\ElasticSearchMovies.Application.csproj", "{8DD5659E-C00C-437F-AD12-5E32C98F25C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElasticSearchMovies.Application", "src\ElasticSearchMovies.Application\ElasticSearchMovies.Application.csproj", "{8DD5659E-C00C-437F-AD12-5E32C98F25C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElasticSearchMovies.Integration.ElasticSearch", "src\ElasticSearchMovies.Integration.ElasticSearch\ElasticSearchMovies.Integration.ElasticSearch.csproj", "{5FAECA25-08A5-4B9B-A99B-DE9EA83C614B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElasticSearchMovies.Integration.ElasticSearch", "src\ElasticSearchMovies.Integration.ElasticSearch\ElasticSearchMovies.Integration.ElasticSearch.csproj", "{5FAECA25-08A5-4B9B-A99B-DE9EA83C614B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElasticSearchMovies.Integration.Persistence", "src\ElasticSearchMovies.Integration.Persistence\ElasticSearchMovies.Integration.Persistence.csproj", "{4233AA1C-25E5-49F9-8A44-C5C36DBD6988}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElasticSearchMovies.Integration.Persistence", "src\ElasticSearchMovies.Integration.Persistence\ElasticSearchMovies.Integration.Persistence.csproj", "{4233AA1C-25E5-49F9-8A44-C5C36DBD6988}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElasticSearchMovies.Integration.IMDB", "src\ElasticSearchMovies.Integration.IMDB\ElasticSearchMovies.Integration.IMDB.csproj", "{154C710E-F5CE-43AC-B867-BAD5405A56D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -108,6 +110,18 @@ Global
 		{4233AA1C-25E5-49F9-8A44-C5C36DBD6988}.Release|x64.Build.0 = Release|Any CPU
 		{4233AA1C-25E5-49F9-8A44-C5C36DBD6988}.Release|x86.ActiveCfg = Release|Any CPU
 		{4233AA1C-25E5-49F9-8A44-C5C36DBD6988}.Release|x86.Build.0 = Release|Any CPU
+		{154C710E-F5CE-43AC-B867-BAD5405A56D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{154C710E-F5CE-43AC-B867-BAD5405A56D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{154C710E-F5CE-43AC-B867-BAD5405A56D1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{154C710E-F5CE-43AC-B867-BAD5405A56D1}.Debug|x64.Build.0 = Debug|Any CPU
+		{154C710E-F5CE-43AC-B867-BAD5405A56D1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{154C710E-F5CE-43AC-B867-BAD5405A56D1}.Debug|x86.Build.0 = Debug|Any CPU
+		{154C710E-F5CE-43AC-B867-BAD5405A56D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{154C710E-F5CE-43AC-B867-BAD5405A56D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{154C710E-F5CE-43AC-B867-BAD5405A56D1}.Release|x64.ActiveCfg = Release|Any CPU
+		{154C710E-F5CE-43AC-B867-BAD5405A56D1}.Release|x64.Build.0 = Release|Any CPU
+		{154C710E-F5CE-43AC-B867-BAD5405A56D1}.Release|x86.ActiveCfg = Release|Any CPU
+		{154C710E-F5CE-43AC-B867-BAD5405A56D1}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,6 +132,7 @@ Global
 		{8C1B5ED6-B488-4A42-BA42-A31E9E67AED0} = {4A68C382-4D4B-4809-A281-CAA65E4496EA}
 		{5FAECA25-08A5-4B9B-A99B-DE9EA83C614B} = {34028E8E-7D85-4890-B423-478E8439A344}
 		{4233AA1C-25E5-49F9-8A44-C5C36DBD6988} = {34028E8E-7D85-4890-B423-478E8439A344}
+		{154C710E-F5CE-43AC-B867-BAD5405A56D1} = {34028E8E-7D85-4890-B423-478E8439A344}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CC6C95E5-6BA5-4FE7-B5C3-3084FED4A807}
