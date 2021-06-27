@@ -1,6 +1,8 @@
 ﻿using CsvHelper;
 using CsvHelper.Configuration;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ElasticSearchMovies.Integration.IMDB.Models.Mappers
 {
@@ -13,14 +15,14 @@ namespace ElasticSearchMovies.Integration.IMDB.Models.Mappers
             Map(m => m.OriginalTitle).Name("original_title");
             Map(m => m.Year).Convert(ParseYear);
             Map(m => m.DatePublished).Convert(ParseDatePublished);
-            Map(m => m.Genres).Name("genre");
+            Map(m => m.Genres).Convert(args => ParseStringList(args, "genre"));
             Map(m => m.DurationInMinutes).Name("duration");
             Map(m => m.Country).Name("country");
             Map(m => m.Language).Name("language");
             Map(m => m.Director).Name("director");
             Map(m => m.Writer).Name("writer");
             Map(m => m.ProductionCompany).Name("production_company");
-            Map(m => m.Actors).Name("actors");
+            Map(m => m.Actors).Convert(args => ParseStringList(args, "actors"));
             Map(m => m.Description).Name("description");
             Map(m => m.AverageVote).Name("avg_vote");
             Map(m => m.NumberOfVotes).Name("votes");
@@ -61,6 +63,13 @@ namespace ElasticSearchMovies.Integration.IMDB.Models.Mappers
 
             var trimmedField = field.Replace("TV Movie ", string.Empty);
             return int.Parse(trimmedField);
+        }
+
+        private List<string> ParseStringList(ConvertFromStringArgs stringArgs, string fieldName)
+        {
+            var field = stringArgs.Row.GetField(fieldName);
+
+            return field.Split(", ").ToList();
         }
     }
 }

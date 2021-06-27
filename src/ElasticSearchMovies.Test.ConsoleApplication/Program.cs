@@ -12,7 +12,7 @@ namespace ElasticSearchMovies.Test.ConsoleApplication
 
             foreach (var movie in movies)
             {
-                Console.WriteLine($"{movie.Title} ({movie.Year})");
+                Console.WriteLine($"{movie.Id}: {movie.Title} ({movie.Year})");
             }
         }
     }

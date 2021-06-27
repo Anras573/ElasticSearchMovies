@@ -13,5 +13,10 @@
         {
             return new MovieId(id);
         }
+
+        public override string ToString()
+        {
+            return Value;
+        }
     }
 }
