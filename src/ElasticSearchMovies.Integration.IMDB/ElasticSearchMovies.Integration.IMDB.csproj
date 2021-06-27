@@ -9,6 +9,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="27.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ElasticSearchMovies.Application\ElasticSearchMovies.Application.csproj" />
+    <ProjectReference Include="..\ElasticSearchMovies.Domain\ElasticSearchMovies.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="Data\IMDb movies.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
