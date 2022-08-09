@@ -17,13 +17,13 @@ services:
     networks:
       - elasticsearchmovies
 
-  database:
-    image: "mcr.microsoft.com/mssql/server:2019-latest"
-    environment:
-      SA_PASSWORD: "B@A4z&j47ZGY$q"
-      ACCEPT_EULA: "Y"
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.13.1
     ports:
-      - 1433:1433
+      - 5601:5601
+    environment:
+        ELASTICSEARCH_URL: http://elastic:9200
+        ELASTICSEARCH_HOSTS: http://elastic:9200
     networks:
       - elasticsearchmovies
 

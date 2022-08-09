@@ -20,6 +20,12 @@
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ElasticSearchMovies.Application\ElasticSearchMovies.Application.csproj" />
+    <ProjectReference Include="..\ElasticSearchMovies.Integration.ElasticSearch\ElasticSearchMovies.Integration.ElasticSearch.csproj" />
+    <ProjectReference Include="..\ElasticSearchMovies.Shared\ElasticSearchMovies.Shared.csproj" />
+  </ItemGroup>
+
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">

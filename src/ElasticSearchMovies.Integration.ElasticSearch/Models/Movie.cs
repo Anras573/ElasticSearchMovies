@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using ElasticSearchMovies.Domain.Finances;
 
-namespace ElasticSearchMovies.Domain.Movies
+namespace ElasticSearchMovies.Integration.ElasticSearch.Models
 {
-    public record Movie
+    internal class Movie
     {
-        public ExternalId Id { get; set; }
+        public string Id { get; init; }
         public string Title { get; init; }
         public string OriginalTitle { get; init; }
         public int Year { get; init; }
@@ -22,9 +21,12 @@ namespace ElasticSearchMovies.Domain.Movies
         public string Description { get; init; }
         public double? AverageVote { get; init; }
         public int NumberOfVotes { get; init; }
-        public Money Budget { get; init; }
-        public Money GrossIncomeForUSA { get; init; }
-        public Money WorldWideGrossIncome { get; init; }
+        public decimal Budget { get; init; }
+        public string BudgetCurrency { get; init; }
+        public decimal GrossIncomeForUSA { get; init; }
+        public string GrossIncomeForUSACurrency { get; init; }
+        public decimal WorldWideGrossIncome { get; init; }
+        public string WorldWideGrossIncomeCurrency { get; init; }
         public double? MetaScore { get; init; }
         public double? UserReviewScores { get; init; }
         public double? CriticReviewScores { get; init; }

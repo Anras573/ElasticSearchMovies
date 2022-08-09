@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -6,7 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ElasticSearchMovies.Integration.ElasticSearch\ElasticSearchMovies.Integration.ElasticSearch.csproj" />
     <ProjectReference Include="..\ElasticSearchMovies.Integration.IMDB\ElasticSearchMovies.Integration.IMDB.csproj" />
+    <ProjectReference Include="..\ElasticSearchMovies.Shared\ElasticSearchMovies.Shared.csproj" />
   </ItemGroup>
 
 </Project>

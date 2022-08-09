@@ -1,5 +1,7 @@
 ﻿using ElasticSearchMovies.Domain.Finances;
 using ElasticSearchMovies.Domain.Movies;
+using System;
+using System.Linq;
 
 namespace ElasticSearchMovies.Integration.IMDB.Models.Mappers
 {
@@ -17,10 +19,10 @@ namespace ElasticSearchMovies.Integration.IMDB.Models.Mappers
                 Description = movie.Description,
                 Director = movie.Director,
                 DurationInMinutes = movie.DurationInMinutes,
+                Id = ExternalId.Create(movie.IMDbTitleId),
                 Genres = movie.Genres,
                 GrossIncomeForUSA = ParseMoney(movie.GrossIncomeForUSA),
-                Id = MovieId.Create(movie.IMDbTitleId),
-                Language = movie.Language,
+                Languages = movie.Language.Split(new string[] { ", " }, StringSplitOptions.None).ToList(),
                 MetaScore = movie.MetaScore,
                 NumberOfVotes = movie.NumberOfVotes,
                 OriginalTitle = movie.OriginalTitle,
@@ -29,7 +31,7 @@ namespace ElasticSearchMovies.Integration.IMDB.Models.Mappers
                 Title = movie.Title,
                 UserReviewScores = movie.UserReviewScores,
                 WorldWideGrossIncome = ParseMoney(movie.WorldWideGrossIncome),
-                Writer = movie.Writer,
+                Writers = movie.Writer.Split(new string[] { ", " }, StringSplitOptions.None).ToList(),
                 Year = movie.Year
             };
         }

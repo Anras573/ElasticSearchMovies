@@ -2,6 +2,6 @@
 {
     internal static class Constants
     {
-        public const string RelativeDataPath = @"Data/IMDb movies.csv";
+        public const string RelativeDataPath = "Data/IMDb movies.csv";
     }
 }

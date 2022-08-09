@@ -84,7 +84,8 @@ namespace ElasticSearchMovies.Domain.Finances
             { "MNT", Currency.MNT },
             { "AZM", Currency.AZM },
             { "AMD", Currency.AMD },
-            { "AED", Currency.AED }
+            { "AED", Currency.AED },
+            { "USD", Currency.USD }
         };
 
         public static Currency Map(string input)

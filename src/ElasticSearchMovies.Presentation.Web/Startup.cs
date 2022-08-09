@@ -1,10 +1,12 @@
+using ElasticSearchMovies.Integration.ElasticSearch;
+using ElasticSearchMovies.Shared;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 
 namespace ElasticSearchMovies.Presentation.Web
 {
@@ -20,13 +22,18 @@ namespace ElasticSearchMovies.Presentation.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllersWithViews();
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/build";
+            });
+
+            services.AddElasticSearch(() => new MovieElasticSearchConfiguration
+            {
+                DefaultIndex = $"test-{Constants.IndexName}",
+                Uri = new Uri("http://localhost:9200")
             });
         }
 

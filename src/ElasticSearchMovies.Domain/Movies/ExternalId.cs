@@ -1,17 +1,17 @@
 ﻿namespace ElasticSearchMovies.Domain.Movies
 {
-    public struct MovieId
+    public struct ExternalId
     {
         public string Value { get; }
 
-        private MovieId(string id)
+        private ExternalId(string id)
         {
             Value = id;
         }
 
-        public static MovieId Create(string id)
+        public static ExternalId Create(string id)
         {
-            return new MovieId(id);
+            return new ExternalId(id);
         }
 
         public override string ToString()
